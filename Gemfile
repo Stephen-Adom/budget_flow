@@ -72,3 +72,7 @@ group :test do
 end
 
 gem "erb-formatter", "~> 0.4.3"
+
+gem "tailwindcss-rails", "~> 2.0"
+
+gem "devise", "~> 4.9"
