@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
   get "welcome", to: "welcome#index"
-  devise_for :users
+  devise_for :users, path: "auth"
 end

@@ -1,26 +1,58 @@
-<h2>Log in</h2>
+<section id="login-section" class="w-full h-screen p-3 bg-baseColor md:p-10">
+  <section class="w-full sm:w-full md:w-[60%] lg:w-[40%] mx-auto">
+    <h1
+      class="
+        hidden
+        mb-2
+        text-5xl
+        font-light
+        text-center
+        sm:hidden
+        md:block
+        lg:block
+      "
+    >Login</h1>
+    <p class="hidden font-semibold text-center sm:hidden md:block lg:block">Hi, Welcome Back</p>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "mt-0 md:mt-7") do |f| %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email,
+                      class: "form-control",
+                      placeholder: "Email",
+                      autofocus: true,
+                      autocomplete: "email" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password,
+                         class: "form-control",
+                         placeholder: "Password",
+                         autocomplete: "current-password" %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+      <% if devise_mapping.rememberable? %>
+        <div class="flex items-center gap-2 mt-3 form-group">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, class: "mb-0 block" %>
+        </div>
+      <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+      <div class="mt-4 form-group">
+        <%= f.submit "Log in",
+                 class:
+                   "w-full py-4 text-lg text-white rounded-md btn bg-primaryBlue hover:bg-primaryBlueDeep" %>
+      </div>
+    <% end %>
 
-<%= render "devise/shared/links" %>
+    <%= link_to "Forgot Password?",
+    :new_user_password,
+    class: "block my-2 text-sm text-center text-neutral-500" %>
+    <p class="text-sm text-center">
+      You don't have an Account?
+      <%= link_to "Sign Up", :new_user_registration, class: "font-bold text-primaryBlue" %>
+    </p>
+
+  </section>
+</section>

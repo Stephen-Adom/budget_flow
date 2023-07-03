@@ -1,29 +1,106 @@
-<h2>Sign up</h2>
+<section id="register-section" class="w-full h-screen p-3 bg-baseColor md:p-10">
+  <section class="w-full sm:w-full md:w-[60%] lg:w-[40%] mx-auto">
+    <h1
+      class="
+        hidden
+        mb-2
+        text-5xl
+        font-light
+        text-center
+        sm:hidden
+        md:block
+        lg:block
+      "
+    >
+      Create An Account
+    </h1>
+    <p class="hidden font-semibold text-center sm:hidden md:block lg:block">
+      Hi, Welcome to Budgetflow
+    </p>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"mt-0 md:mt-7") do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div
+        class="
+          flex
+          items-center
+          w-full
+          p-4
+          mt-0
+          mb-1
+          bg-white
+          cursor-pointer
+          md:mt-3
+          user-profile
+          gap-x-4
+          md:mb-3
+        "
+      >
+        <%= image_tag "https://tecdn.b-cdn.net/img/new/avatars/2.webp",
+        class: "w-14 rounded-full",
+        alt: "Avatar" %>
+        <p class="text-neutral-400">Upload picture</p>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.email_field :name,
+                      class: "form-control #{check_if_valid(f.object.errors, :name)}",
+                      placeholder: "Full name",
+                      autofocus: true,
+                      autocomplete: "name" %>
+        <%= render "shared/error_message", errors: f.object.errors, label: :name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email,
+                      class: "form-control #{check_if_valid(f.object.errors, :email)}",
+                      placeholder: "Email",
+                      autofocus: true,
+                      autocomplete: "email" %>
+        <%= render "shared/error_message", errors: f.object.errors, label: :email %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="form-group">
+        <div class="flex items-center gap-3">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em class="hidden mb-2 text-xs text-neutral-400 sm:hidden md:block">(<%= @minimum_password_length %>
+              characters minimum)</em>
+          <% end %>
+        </div>
+        <%= f.password_field :password,
+                         class:
+                           "form-control #{check_if_valid(f.object.errors, :password)}",
+                         placeholder: "Password",
+                         autocomplete: "new-password" %>
+        <%= render "shared/error_message", errors: f.object.errors, label: :password %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation,
+                         class:
+                           "form-control #{check_if_valid(f.object.errors, :password_confirmation)}",
+                         placeholder: "Confirm Password",
+                         autocomplete: "new-password" %>
+        <%= render "shared/error_message",
+        errors: f.object.errors,
+        label: :password_confirmation %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Sign up",
+                 class:
+                   "w-full py-4 text-lg text-white rounded-md btn bg-primaryBlue hover:bg-primaryBlueDeep" %>
+      </div>
+    <% end %>
+
+    <p class="mt-2 text-sm text-center">
+      Already have an Account?
+      <%= link_to "Sign In", :new_user_session, class: "font-bold text-primaryBlue" %>
+    </p>
+
+  </section>
+</section>
