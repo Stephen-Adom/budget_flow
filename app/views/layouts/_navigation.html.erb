@@ -13,9 +13,9 @@
     justify-between
   "
 >
-  <a href="" class="hidden text-xl navbar-brand sm:hidden md:block">
+  <%= link_to home_path, class:"hidden text-xl navbar-brand sm:hidden md:block" do %>
     Budget<span class="font-bold text-primaryBlue">Flow</span>
-  </a>
+  <% end %>
 
   <button
     type="button"
@@ -41,12 +41,8 @@
   <h5 class="text-white text-[1.2rem] font-light">DASHBOARD</h5>
 
   <div class="flex items-center gap-3 navbar-nav">
-    <button
-      type="button"
-      class="btn btn-custom"
-      data-modal-target="defaultModal"
-      data-modal-toggle="defaultModal"
-    >
+
+    <%= link_to new_category_path, type:"button", class:"btn btn-custom" do %>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -63,7 +59,7 @@
       </svg>
 
       <span class="hidden sm:hidden md:block">New Category</span>
-    </button>
+    <% end %>
     <!-- Second dropdown container -->
     <div class="relative hidden sm:hidden md:block" data-te-dropdown-ref>
       <!-- Second dropdown trigger -->
@@ -206,5 +202,3 @@
     </div>
   </div>
 </nav>
-
-<%= render "shared/add_category_modal" %>
