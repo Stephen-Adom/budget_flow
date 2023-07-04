@@ -108,4 +108,10 @@
     </div>
   <% end %>
 
+  <%= link_to "ADD A NEW TRANSACTION",
+  new_category_expense_path(category_id: params[:category_id]),
+  type: "button",
+  class:
+    "text-center fixed bottom-0 left-0 w-full py-5 text-white  btn bg-primaryGreen block sm:block md:hidden" %>
+
 </section>

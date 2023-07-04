@@ -48,7 +48,7 @@
   <div class="flex items-center gap-3 navbar-nav">
 
     <% if navbar_title === "DASHBOARD" || navbar_title === "CATEGORY" %>
-      <%= link_to new_category_path, type:"button", class:"btn btn-custom" do %>
+      <%= link_to new_category_path, type:"button", class:"btn btn-custom hidden sm:hidden md:flex lg:flex" do %>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -68,7 +68,7 @@
       <% end %>
     <% else %>
 
-      <%= link_to new_category_expense_path(category_id: params[:category_id]), type:"button", class:"btn btn-custom" do %>
+      <%= link_to new_category_expense_path(category_id: params[:category_id]), type:"button", class:"btn btn-custom hidden sm:hidden md:flex lg:flex" do %>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -96,8 +96,7 @@
       dropdown_toggle: "userDropdown",
       dropdown_placement: "bottom-start"
     },
-    class:
-      "w-10 h-10 rounded-full cursor-pointer hidden sm:hidden md:block lg:block",
+    class: "w-10 h-10 rounded-full cursor-pointer",
     alt: "User dropdown" %>
     <!-- Dropdown menu -->
     <div
@@ -270,6 +269,5 @@
     </div>
   </div>
 </div>
-
 <!-- ========Confirm Logout Modal End Section ========== -->
 <%= render "layouts/mobile_drawer" %>

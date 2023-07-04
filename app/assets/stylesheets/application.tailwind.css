@@ -40,7 +40,6 @@ select.invalid {
 }
 
 .btn-custom {
-  display: flex;
   align-items: center;
   background-color: #3778c2 !important;
   padding: 0.5rem 1.25rem;
