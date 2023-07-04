@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "stimulus-notification": "^2.2.0",
     "tw-elements": "^1.0.0-beta2"
   }
 }
