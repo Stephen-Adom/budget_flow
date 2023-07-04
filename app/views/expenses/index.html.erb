@@ -15,6 +15,24 @@
     <div class="flex items-center justify-between p-6 card-body gap-x-4">
       <div class="flex items-center gap-x-4">
 
+        <%= link_to :back do %>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
+            />
+          </svg>
+
+        <% end %>
+
         <h6 class="text-sm text-neutral-500">
           <%= @category.name %>
         </h6>

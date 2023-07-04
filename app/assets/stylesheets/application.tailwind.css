@@ -56,4 +56,5 @@ select.invalid {
 
 .expense-icon svg {
 	stroke: white !important;
+	width: 70%;
 }

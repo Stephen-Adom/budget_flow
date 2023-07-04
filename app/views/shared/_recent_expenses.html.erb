@@ -1,0 +1,15 @@
+<div class="transactions-overview">
+  <div class="bg-white border rounded-md cursor-pointer card border-neutral-300">
+    <div class="p-6 card-body">
+      <h6 class="font-semibold">Recent Transactions</h6>
+      <span class="block text-xs italic text-neutral-400">For the past week...</span>
+
+      <ul class="pl-0 mt-4">
+
+        <% expenses.each do |expense| %>
+          <%= render "shared/recent_expense_item", expense: expense %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

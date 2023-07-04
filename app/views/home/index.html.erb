@@ -113,53 +113,8 @@
 
   </div>
 
-  <div class="transactions-overview">
-    <div class="bg-white border rounded-md cursor-pointer card border-neutral-300">
-      <div class="p-6 card-body">
-        <h6 class="font-semibold">Recent Transactions</h6>
-        <span class="block text-xs italic text-neutral-400">As of today...</span>
+  <% if recent_expenses.any? %>
+    <%= render "shared/recent_expenses", expenses: recent_expenses %>
+  <% end %>
 
-        <ul class="pl-0 mt-4">
-          <li>
-            <a href="" class="flex items-center justify-between">
-              <section class="flex items-center gap-2">
-                <div
-                  class="
-                    flex
-                    items-center
-                    justify-center
-                    w-10
-                    h-10
-                    rounded-md
-                    bg-primaryBlueDeep
-                  "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-5 h-5 stroke stroke-white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h6 class="mb-0 text-sm font-semibold">Super</h6>
-                  <span class="block text-xs text-neutral-400">2 min ago</span>
-                </div>
-              </section>
-
-              <span class="text-sm font-bold text-primaryBlue">$200</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </section>

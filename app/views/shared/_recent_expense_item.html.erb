@@ -1,0 +1,32 @@
+<li id="<%= dom_id(expense) %>" class="mb-3">
+  <a href="" class="flex items-center justify-between">
+    <section class="flex items-center gap-2">
+      <div
+        class="
+          flex
+          items-center
+          justify-center
+          w-10
+          h-10
+          rounded-md
+          expense-icon
+          bg-primaryBlueDeep
+        "
+      >
+        <%= find_icon(expense.category.icon).html_safe %>
+      </div>
+      <div>
+        <h6 class="mb-0 text-sm font-semibold">
+          <%= expense.expense.name %>
+        </h6>
+        <span class="block text-xs text-neutral-400">
+          <%= time_ago_in_words(expense.expense.created_at) %>
+        </span>
+      </div>
+    </section>
+
+    <span class="text-sm font-bold text-primaryBlue">
+      <%= number_to_currency(expense.expense.amount) %>
+    </span>
+  </a>
+</li>
