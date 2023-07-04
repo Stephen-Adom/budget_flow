@@ -16,7 +16,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 # 📖 [Budget Flow] <a name="about-project"></a>
@@ -132,14 +131,6 @@ If you like this project give a ⭐️.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse for this project and [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the original design idea.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **[Can I use this project?]**
-
-  - [It's MIT license, feel free to use as you like.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
