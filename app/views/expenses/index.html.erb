@@ -15,7 +15,9 @@
     <div class="flex items-center justify-between p-6 card-body gap-x-4">
       <div class="flex items-center gap-x-4">
 
-        <%= link_to home_path do %>
+        <%= link_to home_path, data: {
+          turbo: "false"
+        } do %>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -89,7 +91,9 @@
       </div>
       <div class="flex">
 
-        <%= link_to new_category_expense_path, type:"button", class:"text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center" do %>
+        <%= link_to new_category_expense_path, data: {
+          turbo: "false"
+        }, type:"button", class:"text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center" do %>
           <svg
             class="-ml-0.5 mr-2 h-3 w-3"
             aria-hidden="true"
@@ -111,6 +115,9 @@
   <%= link_to "ADD A NEW TRANSACTION",
   new_category_expense_path(category_id: params[:category_id]),
   type: "button",
+  data: {
+    turbo: "false"
+  },
   class:
     "text-center fixed bottom-0 left-0 w-full py-5 text-white  btn bg-primaryGreen block sm:block md:hidden" %>
 

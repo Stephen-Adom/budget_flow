@@ -22,7 +22,10 @@
 
         <%= link_to "view",
         category_expenses_path(category),
-        class: "block text-sm text-primaryBlue font-semibold" %>
+        class: "block text-sm text-primaryBlue font-semibold",
+        data: {
+          turbo: "false"
+        } %>
       </div>
       <h5 class="text-xl font-semibold"><%= number_to_currency(category.total_expenses) %></h5>
     </div>

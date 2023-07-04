@@ -44,11 +44,14 @@
     "
   >
 
-    <%= form.submit label, class: "btn btn-custom" %>
+    <%= form.submit label, class: "btn btn-custom", data: { turbo: "false" } %>
 
     <%= link_to "Back",
     :back,
     type: "button",
+    data: {
+      turbo: "false"
+    },
     class:
       "px-5 py-2 text-xs text-gray-500 bg-white border border-gray-200 rounded-sm hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 hover:text-gray-900 focus:z-10" %>
 

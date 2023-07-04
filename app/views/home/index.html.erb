@@ -120,6 +120,9 @@
   <%= link_to "ADD A NEW CATEGORY",
   new_category_path,
   type: "button",
+  data: {
+    turbo: "false"
+  },
   class:
     "text-center fixed bottom-0 left-0 w-full py-5 text-white  btn bg-primaryGreen block sm:block md:hidden" %>
 </section>
