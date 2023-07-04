@@ -1,5 +1,5 @@
 <section id="categories-new" class="mt-4">
-  <h2 class="mb-10 text-3xl font-bold text-center">New Category</h2>
+  <h2 class="mb-10 text-3xl font-bold text-center">New Expense</h2>
   <div
     class="
       grid
@@ -10,14 +10,14 @@
       lg:grid-cols-2
     "
   >
-    <%= image_tag "undraw_folder.svg",
-    width: "100%",
+    <%= image_tag "undraw_account.svg",
+    width: "80%",
     class: "mx-auto hidden sm:hidden md:block" %>
 
     <div
       class="
         block
-        max-w-md
+        max-w-lg
         p-6
         mx-auto
         bg-white
@@ -27,11 +27,12 @@
         shadow
       "
     >
-      <%= render "shared/category_form",
-      category: @category,
-      url: categories_path,
+      <%= render "shared/expense_form",
+      expense: @expense,
+      url: category_expenses_path,
       method: :post,
-      label: "Add Category" %>
+      label: "Add Expense",
+      selected_categories: @selected_categories %>
     </div>
 
   </div>

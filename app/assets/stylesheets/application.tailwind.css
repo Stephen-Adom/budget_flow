@@ -53,3 +53,7 @@ select.invalid {
 	border-radius: 0.125rem;
 	border: 1px solid #3778c2;
 }
+
+.expense-icon svg {
+	stroke: white !important;
+}

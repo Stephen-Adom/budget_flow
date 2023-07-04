@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: :author_id
+  belongs_to :author, class_name: "User", foreign_key: :author_id
   has_many :category_expenses
   has_many :expenses, through: :category_expenses
 
@@ -7,6 +7,6 @@ class Category < ApplicationRecord
   validates :icon, presence: true
 
   def total_expenses
-    category_expenses.sum(:amount)
+    expenses.sum(:amount)
   end
 end

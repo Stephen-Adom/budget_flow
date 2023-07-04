@@ -1,0 +1,78 @@
+<%= form_with(model: expense, url: url, method: method) do |form| %>
+  <!-- Modal body -->
+  <div class="p-6 space-y-6">
+
+    <div class="mb-6">
+      <%= form.label :name,
+                 "Name of Expense",
+                 class: "block mb-2 text-sm font-medium text-gray-900 " %>
+      <%= form.text_field :name,
+                      class:
+                        "form-control #{check_if_valid(form.object.errors, :name)}",
+                      placeholder: "Expense Name" %>
+
+      <%= render "shared/error_message", errors: form.object.errors, label: :name %>
+
+    </div>
+    <div class="mb-6">
+      <%= form.label :amount,
+                 "Amount",
+                 class: "block mb-2 text-sm font-medium text-gray-900 " %>
+      <%= form.number_field :amount,
+                        class:
+                          "form-control #{check_if_valid(form.object.errors, :amount)}",
+                        placeholder: "Expense Amount" %>
+
+      <%= render "shared/error_message", errors: form.object.errors, label: :amount %>
+
+    </div>
+
+    <div class="mb-6">
+      <%= form.label :category_id,
+                 class: "block mb-2 text-sm font-medium text-gray-900 " do %>
+
+        <span>Category
+          <small class="text-primaryGreen">(Add new category to current)
+          </small>
+        </span>
+      <% end %>
+      <%= select_tag :category_ids,
+      options_from_collection_for_select(
+        Category.where(author: current_user),
+        :id,
+        :name,
+        selected_categories
+      ),
+      include_blank: "Select Category",
+      class: "form-control #{check_if_valid(form.object.errors, :category_ids)}",
+      multiple: true %>
+
+      <%= render "shared/error_message", errors: form.object.errors, label: :category_id %>
+    </div>
+
+  </div>
+  <!-- Modal footer -->
+  <div
+    class="
+      flex
+      items-center
+      justify-center
+      p-6
+      space-x-2
+      border-t
+      border-gray-200
+      rounded-b
+    "
+  >
+
+    <%= form.submit label, class: "btn btn-custom" %>
+
+    <%= link_to "Back",
+    :back,
+    type: "button",
+    class:
+      "px-5 py-2 text-xs text-gray-500 bg-white border border-gray-200 rounded-sm hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 hover:text-gray-900 focus:z-10" %>
+
+  </div>
+
+<% end %>
