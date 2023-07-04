@@ -44,11 +44,11 @@
 
       <div class="form-group">
         <%= f.label :name %>
-        <%= f.email_field :name,
-                      class: "form-control #{check_if_valid(f.object.errors, :name)}",
-                      placeholder: "Full name",
-                      autofocus: true,
-                      autocomplete: "name" %>
+        <%= f.text_field :name,
+                     class: "form-control #{check_if_valid(f.object.errors, :name)}",
+                     placeholder: "Full name",
+                     autofocus: true,
+                     autocomplete: "name" %>
         <%= render "shared/error_message", errors: f.object.errors, label: :name %>
       </div>
 
