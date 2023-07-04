@@ -60,13 +60,15 @@ A simple budget application made with tailwind and rails framework.
 
 ### Screenshots <a name="screenshots"></a>
 
-![Splash]('./screenshots/splash.png')
-![Login]('./screenshots/login.png')
-![Register]('./screenshots/register.png')
-![Expenses list]('./screenshots/expenses_list.png')
-![Home Page]('./screenshots/category_list.png')
-![New Category]('./screenshots/new_category.png')
-![New Expense]('./screenshots/new_expense.png')
+<div align="center">
+  <img src="./screenshots/splash.png" alt="Splash" />
+  <img src="./screenshots/login.png" alt="Login" />
+  <img src="./screenshots/register.png" alt="Register" />
+  <img src="./screenshots/expenses_list.png" alt="Expenses list" />
+  <img src="./screenshots/category_list.png" alt="Category list" />
+  <img src="./screenshots/new_category.png" alt="New Category" />
+  <img src="./screenshots/new_expense.png" alt="New Expense" />
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
