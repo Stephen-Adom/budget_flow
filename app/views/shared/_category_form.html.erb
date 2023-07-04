@@ -1,0 +1,57 @@
+<%= form_with(model: category, url: url, method: method) do |form| %>
+  <!-- Modal body -->
+  <div class="p-6 space-y-6">
+
+    <div class="mb-6">
+      <%= form.label :name,
+                 "Category Name",
+                 class: "block mb-2 text-sm font-medium text-gray-900 " %>
+      <%= form.text_field :name,
+                      class:
+                        "form-control #{check_if_valid(form.object.errors, :name)}",
+                      placeholder: "Category Name" %>
+
+      <%= render "shared/error_message", errors: form.object.errors, label: :name %>
+
+    </div>
+
+    <div class="mb-6">
+      <%= form.label :icon,
+                 "Category Icon",
+                 class: "block mb-2 text-sm font-medium text-gray-900 " %>
+      <%= form.select :icon,
+                  options_for_select(category_icons),
+                  prompt: "Select Category Icon",
+                  class: "form-control #{check_if_valid(form.object.errors, :name)}",
+                  placeholder: "Category Name",
+                  required: true %>
+
+      <%= render "shared/error_message", errors: form.object.errors, label: :icon %>
+    </div>
+
+  </div>
+  <!-- Modal footer -->
+  <div
+    class="
+      flex
+      items-center
+      justify-center
+      p-6
+      space-x-2
+      border-t
+      border-gray-200
+      rounded-b
+    "
+  >
+
+    <%= form.submit label, class: "btn btn-custom" %>
+
+    <%= link_to "Cancel",
+    :back,
+    type: "button",
+    class:
+      "px-5 py-2 text-xs text-gray-500 bg-white border border-gray-200 rounded-sm hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 hover:text-gray-900 focus:z-10" %>
+
+  </div>
+
+<% end %>

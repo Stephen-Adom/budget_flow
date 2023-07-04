@@ -1,89 +1,16 @@
 <section id="categories-new" class="mt-4">
   <h2 class="mb-10 text-3xl font-bold text-center">New Category</h2>
   <div
-    class="
-      grid
-      grid-cols-1
-      new-category-content
-      sm:grid-cols-1
-      md:grid-cols-2
-      lg:grid-cols-2
-    "
+    class="grid grid-cols-1 new-category-content sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2"
   >
     <%= image_tag "undraw_folder.svg",
     width: "80%",
     class: "mx-auto hidden sm:hidden md:block" %>
 
     <div
-      class="
-        block
-        max-w-md
-        p-6
-        mx-auto
-        bg-white
-        border
-        border-gray-200
-        rounded-lg
-        shadow
-      "
+      class="block max-w-md p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow "
     >
-      <%= form_with(model: @category, url: categories_path, method: :post) do |form| %>
-        <!-- Modal body -->
-        <div class="p-6 space-y-6">
-
-          <div class="mb-6">
-            <%= form.label :name,
-                       "Category Name",
-                       class: "block mb-2 text-sm font-medium text-gray-900 " %>
-            <%= form.text_field :name,
-                            class:
-                              "form-control #{check_if_valid(form.object.errors, :name)}",
-                            placeholder: "Category Name" %>
-
-            <%= render "shared/error_message", errors: form.object.errors, label: :name %>
-
-          </div>
-
-          <div class="mb-6">
-            <%= form.label :icon,
-                       "Category Icon",
-                       class: "block mb-2 text-sm font-medium text-gray-900 " %>
-            <%= form.select :icon,
-                        options_for_select(category_icons),
-                        prompt: "Select Category Icon",
-                        class: "form-control #{check_if_valid(form.object.errors, :name)}",
-                        placeholder: "Category Name",
-                        required: true %>
-
-            <%= render "shared/error_message", errors: form.object.errors, label: :icon %>
-          </div>
-
-        </div>
-        <!-- Modal footer -->
-        <div
-          class="
-            flex
-            items-center
-            justify-center
-            p-6
-            space-x-2
-            border-t
-            border-gray-200
-            rounded-b
-          "
-        >
-
-          <%= form.submit "Add Category", class: "btn btn-custom" %>
-
-          <%= link_to "Cancel",
-          :back,
-          type: "button",
-          class:
-            "px-5 py-2 text-xs text-gray-500 bg-white border border-gray-200 rounded-sm hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 hover:text-gray-900 focus:z-10" %>
-
-        </div>
-
-      <% end %>
+      <%= render 'shared/category_form', category:@category, url: categories_path, method: :post, label: "Add Category" %>
     </div>
 
   </div>

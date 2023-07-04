@@ -29,7 +29,9 @@
 
         <div>
           <h6 class="mb-2 text-sm text-neutral-500">My Overall Expenses</h6>
-          <h1 class="text-3xl font-light md:text-5xl">$200,000.00</h1>
+          <h1 class="text-3xl font-light md:text-5xl">
+            <%= number_to_currency(@total_expenses) %>
+          </h1>
         </div>
       </div>
     </div>
