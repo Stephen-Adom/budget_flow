@@ -84,9 +84,15 @@
     </div>
 
     <div class="category-details">
-      <span class="block text-sm text-neutral-400">
-        <%= category.name %>
-      </span>
+      <div class="flex items-center justify-between">
+        <span class="block text-sm text-neutral-400">
+          <%= category.name %>
+        </span>
+
+        <%= link_to "view",
+        category_expenses_path(category),
+        class: "block text-sm text-primaryBlue font-semibold" %>
+      </div>
       <h5 class="text-xl font-semibold"><%= number_to_currency(category.total_expenses) %></h5>
     </div>
   </div>
