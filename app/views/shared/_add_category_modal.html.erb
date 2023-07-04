@@ -21,20 +21,10 @@
 >
   <div class="relative w-full max-w-2xl max-h-full">
     <!-- Modal content -->
-    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+    <div class="relative bg-white rounded-lg shadow">
       <!-- Modal header -->
-      <div
-        class="
-          flex
-          items-start
-          justify-between
-          p-4
-          border-b
-          rounded-t
-          dark:border-gray-600
-        "
-      >
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+      <div class="flex items-start justify-between p-4 border-b rounded-t ">
+        <h3 class="text-xl font-semibold text-gray-900">
           New Category
         </h3>
         <button
@@ -50,8 +40,6 @@
             ml-auto
             inline-flex
             items-center
-            dark:hover:bg-gray-600
-            dark:hover:text-white
           "
           data-modal-hide="defaultModal"
         >
@@ -69,130 +57,70 @@
           <span class="sr-only">Close modal</span>
         </button>
       </div>
-      <!-- Modal body -->
-      <div class="p-6 space-y-6">
+      <%= form_with(model: @category, url: categories_path, method: :post) do |form| %>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
 
-        <form>
           <div class="mb-6">
-            <label
-              for="email"
-              class="
-                block
-                mb-2
-                text-sm
-                font-medium
-                text-gray-900
-                dark:text-white
-              "
-            >Category Name</label>
-            <input
-              type="text"
-              id="name"
-              class="
-                bg-gray-50
-                border
-                border-gray-300
-                text-gray-900
-                text-sm
-                rounded-lg
-                focus:ring-blue-500
-                focus:border-blue-500
-                block
-                w-full
-                p-2.5
-                dark:bg-gray-700
-                dark:border-gray-600
-                dark:placeholder-gray-400
-                dark:text-white
-                dark:focus:ring-blue-500
-                dark:focus:border-blue-500
-              "
-              placeholder="name@flowbite.com"
-              required
-            >
-          </div>
-          <div class="mb-6">
-            <label
-              for="password"
-              class="
-                block
-                mb-2
-                text-sm
-                font-medium
-                text-gray-900
-                dark:text-white
-              "
-            >Your password</label>
-            <input
-              type="password"
-              id="password"
-              class="
-                bg-gray-50
-                border
-                border-gray-300
-                text-gray-900
-                text-sm
-                rounded-lg
-                focus:ring-blue-500
-                focus:border-blue-500
-                block
-                w-full
-                p-2.5
-                dark:bg-gray-700
-                dark:border-gray-600
-                dark:placeholder-gray-400
-                dark:text-white
-                dark:focus:ring-blue-500
-                dark:focus:border-blue-500
-              "
-              required
-            >
+            <%= form.label :name,
+                       "Category Name",
+                       class: "block mb-2 text-sm font-medium text-gray-900 " %>
+            <%= form.text_field :name,
+                            class: "form-control",
+                            placeholder: "Category Name",
+                            required: true %>
           </div>
 
-        </form>
+          <div class="mb-6">
+            <%= form.label :icon,
+                       "Category Icon",
+                       class: "block mb-2 text-sm font-medium text-gray-900 " %>
+            <%= form.select :icon,
+                        options_for_select(category_icons),
+                        class: "form-control",
+                        placeholder: "Category Name",
+                        required: true %>
+          </div>
 
-      </div>
-      <!-- Modal footer -->
-      <div
-        class="
-          flex
-          items-center
-          p-6
-          space-x-2
-          border-t
-          border-gray-200
-          rounded-b
-          dark:border-gray-600
-        "
-      >
-        <button data-modal-hide="defaultModal" type="button" class="btn btn-custom">Add Category</button>
-        <button
-          data-modal-hide="defaultModal"
-          type="button"
+        </div>
+        <!-- Modal footer -->
+        <div
           class="
-            px-5
-            py-2
-            text-xs
-            text-gray-500
-            bg-white
-            border
+            flex
+            items-center
+            p-6
+            space-x-2
+            border-t
             border-gray-200
-            rounded-sm
-            hover:bg-gray-100
-            focus:ring-4
-            focus:outline-none
-            focus:ring-blue-300
-            hover:text-gray-900
-            focus:z-10
-            dark:bg-gray-700
-            dark:text-gray-300
-            dark:border-gray-500
-            dark:hover:text-white
-            dark:hover:bg-gray-600
-            dark:focus:ring-gray-600
+            rounded-b
           "
-        >Cancel</button>
-      </div>
+        >
+
+          <%= form.submit "Add Category", class: "btn btn-custom" %>
+          <button
+            data-modal-hide="defaultModal"
+            type="button"
+            class="
+              px-5
+              py-2
+              text-xs
+              text-gray-500
+              bg-white
+              border
+              border-gray-200
+              rounded-sm
+              hover:bg-gray-100
+              focus:ring-4
+              focus:outline-none
+              focus:ring-blue-300
+              hover:text-gray-900
+              focus:z-10
+            "
+          >Cancel</button>
+        </div>
+
+      <% end %>
+
     </div>
   </div>
 </div>

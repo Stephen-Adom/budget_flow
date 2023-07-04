@@ -6,6 +6,7 @@
     lg:grid-cols-[75%_25%]
     gap-5
     py-5
+    px-3
   "
 >
   <div class="overview">
@@ -23,7 +24,8 @@
       "
     >
       <div class="flex items-center p-6 card-body gap-x-4">
-        <img src="./budget-logo.png" width="15%" alt="budget-logo"/>
+
+        <%= image_tag "budget-logo.png", width: "15%", alt: "budget-logo" %>
 
         <div>
           <h6 class="mb-2 text-sm text-neutral-500">My Overall Expenses</h6>

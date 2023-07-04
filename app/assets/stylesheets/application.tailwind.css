@@ -21,7 +21,8 @@
 		@apply w-full mb-1 md:mb-5;
 	}
 
-	.form-control {
+	.form-control,
+	select {
 		@apply w-full p-4 bg-white border-none rounded-md focus:outline-none focus:border focus:border-blue-600;
 	}
 
@@ -30,7 +31,13 @@
 	}
 }
 
-.form-control.invalid {
+.form-control,
+select {
+	border: 1px solid #dbd1d1;
+}
+
+.form-control.invalid,
+select.invalid {
 	border: 1px solid red !important;
 }
 
