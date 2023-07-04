@@ -18,18 +18,19 @@ class ExpensesController < AuthController
       if @expense.save
         update_category_expenses(@expense)
 
-        format.html { redirect_to category_expenses_path(category_id: params[:category_id]), notice: "Expense was successfully created." }
+        format.html do
+          redirect_to category_expenses_path(category_id: params[:category_id]),
+                      notice: 'Expense was successfully created.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
 
-  def update
-  end
+  def update; end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
