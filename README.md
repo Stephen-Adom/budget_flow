@@ -4,6 +4,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Screenshots](#screenshots)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -54,6 +55,18 @@ A simple budget application made with tailwind and rails framework.
 - **Budget List (Expenses page)**
 - **Add Expense (Expenses page)**
 - **Add Category (Categories page) **
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Screenshots <a name="screenshots"></a>
+
+![Splash]('./screenshots/splash.png')
+![Login]('./screenshots/login.png')
+![Register]('./screenshots/register.png')
+![Expenses list]('./screenshots/expenses_list.png')
+![Home Page]('./screenshots/category_list.png')
+![New Category]('./screenshots/new_category.png')
+![New Expense]('./screenshots/new_expense.png')
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
