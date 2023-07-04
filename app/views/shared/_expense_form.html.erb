@@ -21,6 +21,7 @@
       <%= form.number_field :amount,
                         class:
                           "form-control #{check_if_valid(form.object.errors, :amount)}",
+                        step: 0.01,
                         placeholder: "Expense Amount" %>
 
       <%= render "shared/error_message", errors: form.object.errors, label: :amount %>

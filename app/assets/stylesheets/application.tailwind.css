@@ -29,6 +29,9 @@
 	label {
 		@apply hidden mb-2 sm:hidden md:block lg:block;
 	}
+	.sign_out_btn {
+		@apply text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2;
+	}
 }
 
 .form-control,
@@ -57,4 +60,10 @@ select.invalid {
 .expense-icon svg {
 	stroke: white !important;
 	width: 70%;
+}
+
+#drawer-navigation {
+	background: rgb(55, 120, 194);
+	background: linear-gradient(24deg, rgba(55, 120, 194, 1) 0%, rgba(19, 56, 101, 1) 100%);
+	color: #fff;
 }

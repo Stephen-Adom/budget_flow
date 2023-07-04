@@ -1,7 +1,7 @@
 class HomeController < AuthController
   def index
     @categories = Category.includes(:category_expenses).where(author: current_user)
-    @total_expenses = Expense.where(author: current_user).sum(:amount)
+    @total_expenses = CategoryExpense.includes(:expense).where(expense: { author: current_user }).sum(:amount)
   end
 
   def new
@@ -13,7 +13,7 @@ class HomeController < AuthController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_path, notice: "Category was successfully created." }
       else
         puts @category.errors.full_messages
         format.html { render :new, status: :unprocessable_entity }
@@ -30,7 +30,7 @@ class HomeController < AuthController
 
     respond_to do |format|
       if @category.update(author: current_user, name: category_params[:name], icon: category_params[:icon])
-        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
+        format.html { redirect_to categories_path, notice: "Category was successfully updated." }
       else
         puts @category.errors.full_messages
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class HomeController < AuthController
 
   def destroy
     @category = Category.find(params[:id])
-    flash.now[:notice] = 'Category was successfully Deleted'
+    flash.now[:notice] = "Category was successfully Deleted"
     @category.destroy
 
     render turbo_stream: turbo_stream.remove(@category)
