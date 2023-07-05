@@ -1,0 +1,39 @@
+<section id="categories-new" class="mt-4">
+  <h2 class="mb-10 text-3xl font-bold text-center">New Expense</h2>
+  <div
+    class="
+      grid
+      grid-cols-1
+      new-category-content
+      sm:grid-cols-1
+      md:grid-cols-2
+      lg:grid-cols-2
+    "
+  >
+    <%= image_tag "undraw_account.svg",
+    width: "80%",
+    class: "mx-auto hidden sm:hidden md:block" %>
+
+    <div
+      class="
+        block
+        max-w-lg
+        p-6
+        mx-auto
+        bg-white
+        border
+        border-gray-200
+        rounded-lg
+        shadow
+      "
+    >
+      <%= render "shared/expense_form",
+      expense: @expense,
+      url: category_expenses_path,
+      method: :post,
+      label: "Add Expense",
+      selected_categories: @selected_categories %>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<section id="login-section" class="w-full h-screen p-3 bg-baseColor md:p-10">
+  <section class="w-full sm:w-full md:w-[60%] lg:w-[40%] mx-auto">
+    <h1
+      class="
+        hidden
+        mb-2
+        text-5xl
+        font-light
+        text-center
+        sm:hidden
+        md:block
+        lg:block
+      "
+    >Forgot your password?</h1>
+    <p class="hidden mb-4 font-semibold text-center sm:hidden md:block lg:block">
+      Let us help you recover your account
+    </p>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email,
+                      class: "form-control #{check_if_valid(f.object.errors, :email)}",
+                      placeholder: "Email",
+                      autofocus: true,
+                      autocomplete: "email" %>
+        <%= render "shared/error_message", errors: f.object.errors, label: :email %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Send me reset password instructions",
+                 class:
+                   "w-full py-4 text-lg text-white rounded-md btn bg-primaryBlue hover:bg-primaryBlueDeep" %>
+      </div>
+    <% end %>
+
+    <%= link_to "Take me to login",
+    :new_user_session,
+    class: "block my-2 text-sm text-center text-neutral-500" %>
+    <p class="text-sm text-center">
+      You don't have an Account?
+      <%= link_to "Sign Up", :new_user_registration, class: "font-bold text-primaryBlue" %>
+    </p>
+
+  </section>
+</section>

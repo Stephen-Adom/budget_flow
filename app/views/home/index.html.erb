@@ -1,0 +1,128 @@
+<section
+  class="
+    grid
+    grid-cols-1
+    md:grid-cols-[75%_25%]
+    lg:grid-cols-[75%_25%]
+    gap-5
+    py-5
+    px-3
+  "
+>
+  <div class="overview">
+    <h1 class="text-3xl font-bold tracking-wider">Dashboard</h1>
+    <p class="text-sm italic text-neutral-500">Here's your financial overview</p>
+
+    <div
+      class="
+        card
+        mt-6
+        shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+        block
+        rounded-lg
+        bg-white
+      "
+    >
+      <div class="flex items-center p-6 card-body gap-x-4">
+
+        <%= image_tag "budget-logo.png", width: "15%", alt: "budget-logo" %>
+
+        <div>
+          <h6 class="mb-2 text-sm text-neutral-500">My Overall Expenses</h6>
+          <h1 class="text-3xl font-light md:text-5xl">
+            <%= number_to_currency(@total_expenses) %>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <% if @categories.any? %>
+
+      <div
+        class="
+          grid
+          grid-cols-2
+          gap-5
+          mt-8
+          categories-list
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-4
+        "
+      >
+        <% @categories.each do |category| %>
+          <%= render "shared/category_card", category: category %>
+        <% end %>
+      </div>
+
+    <% else %>
+
+      <div
+        id="alert-additional-content-1"
+        class="
+          p-4
+          mt-5
+          mb-4
+          text-blue-800
+          border
+          border-blue-300
+          rounded-lg
+          bg-blue-50
+        "
+        role="alert"
+      >
+        <div class="flex items-center">
+          <svg
+            class="flex-shrink-0 w-4 h-4 mr-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            />
+          </svg>
+          <span class="sr-only">Info</span>
+          <h3 class="text-lg font-medium">You Have no Categories</h3>
+        </div>
+        <div class="mt-2 mb-4 text-sm">
+          Add some categories to manage your expenses
+        </div>
+        <div class="flex">
+
+          <%= link_to new_category_path, type:"button", class:"text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center" do %>
+            <svg
+              class="-ml-0.5 mr-2 h-3 w-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 14"
+            >
+              <path
+                d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+              />
+            </svg>
+            Add Category
+          <% end %>
+
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+
+  <% if recent_expenses.any? %>
+    <%= render "shared/recent_expenses", expenses: recent_expenses %>
+  <% end %>
+
+  <%= link_to "ADD A NEW CATEGORY",
+  new_category_path,
+  type: "button",
+  data: {
+    turbo: "false"
+  },
+  class:
+    "text-center fixed bottom-0 left-0 w-full py-5 text-white  btn bg-primaryGreen block sm:block md:hidden" %>
+</section>
