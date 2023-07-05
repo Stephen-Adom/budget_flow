@@ -5,6 +5,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
     - [Screenshots](#screenshots)
+    - [Live Demo](#link-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -72,6 +73,12 @@ A simple budget application made with tailwind and rails framework.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Live Demo <a name="live-demo"></a>
+
+[Budget Flow Live Demo](https://budget-flow.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -107,7 +114,7 @@ To run tests, run the following command:
 
 ### Deployment
 
-You can deploy this project using: **Not available**.
+You can deploy this project using: [render](https://render.com/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
