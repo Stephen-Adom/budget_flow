@@ -3,9 +3,7 @@
 one:
   category: one
   expense: one
-  amount: 9.99
 
 two:
   category: two
   expense: two
-  amount: 9.99
