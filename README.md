@@ -93,9 +93,8 @@ This project does not require installation.
 **To run the project follow the following instruction:-**
 
 - Clone this [repository](https://github.com/Stephen-Adom/budget_flow.git) in your local machine with correct branch.
-- Run following cmds:-
-- **rails db:create**
-- **rails db:migrate**
+- Run the following commands:-
+- **rails db: migrate**
 - **rails s**
 
 ### Run tests
@@ -103,8 +102,7 @@ This project does not require installation.
 To run tests, run the following command:
 
 ```sh
-  rspec spec/*
-  ./bin/rails test:integration
+  ./bin/rails test:all*
 ```
 
 ### Deployment
@@ -118,8 +116,7 @@ You can deploy this project using: **Not available**.
 👤 **Stephen Addae**
 
 - GitHub: [@Stephen-Adom](https://github.com/Stephen-Adom)
-- Twitter: [@stephen_alaska](https://twitter.com/stephen_alaska)
-- LinkedIn: [Stephen Addae](https://www.linkedin.com/in/stephen-addae/)
+- LinkedIn [Stephen Addae](https://www.linkedin.com/in/stephen-addae/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
