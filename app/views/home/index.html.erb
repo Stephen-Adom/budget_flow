@@ -2,36 +2,53 @@
   class="
     grid
     grid-cols-1
-    md:grid-cols-[75%_25%]
+    md:grid-cols-1
     lg:grid-cols-[75%_25%]
     gap-5
-    py-5
-    px-3
+    py-1
+    md:py-5
+    px-0
   "
 >
   <div class="overview">
-    <h1 class="text-3xl font-bold tracking-wider">Dashboard</h1>
-    <p class="text-sm italic text-neutral-500">Here's your financial overview</p>
+    <h1 class="hidden text-3xl font-bold tracking-wider sm:hidden md:block">Dashboard</h1>
+    <p class="hidden text-sm italic text-neutral-500 sm:hidden md:block">Here's your financial overview</p>
 
     <div
       class="
         card
-        mt-6
-        shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+        mt-0
+        sm:mt-0
+        md:mt-6
+        shadow-md
+        md:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
         block
         rounded-lg
         bg-white
       "
     >
-      <div class="flex items-center p-6 card-body gap-x-4">
+      <div class="flex items-center p-4 md:p-6 card-body gap-x-4">
 
         <%= image_tag "https://res.cloudinary.com/dt8tdf7uu/image/upload/v1688563626/budget_flow/budget-logo_urptbm.png",
         width: "15%",
+        class: "hidden sm:hidden md:block",
         alt: "budget-logo" %>
 
-        <div>
+        <div
+          class="
+            flex
+            flex-row
+            items-center
+            justify-between
+            w-full
+            md:items-start
+            sm:flex-row
+            md:flex-col
+            sm:justify-between
+          "
+        >
           <h6 class="mb-2 text-sm text-neutral-500">My Overall Expenses</h6>
-          <h1 class="text-3xl font-light md:text-5xl">
+          <h1 class="text-base font-light md:text-5xl md:font-semibold">
             <%= number_to_currency(@total_expenses) %>
           </h1>
         </div>
@@ -43,13 +60,13 @@
       <div
         class="
           grid
-          grid-cols-2
+          grid-cols-1
           gap-5
-          mt-8
+          mt-3
+          md:mt-8
           categories-list
-          sm:grid-cols-2
-          md:grid-cols-3
-          lg:grid-cols-4
+          sm:grid-cols-1
+          md:grid-cols-2
         "
       >
         <% @categories.each do |category| %>
@@ -126,5 +143,5 @@
     turbo: "false"
   },
   class:
-    "text-center fixed bottom-0 left-0 w-full py-5 text-white  btn bg-primaryGreen block sm:block md:hidden" %>
+    "text-center fixed bottom-0 left-0 w-full py-6 text-white  btn bg-primaryGreen block sm:block md:hidden after:content-[''] after:absolute after:top-[50%] after:left-[50%] after:w-[90%] after:h-[70%] after:border after:border-white after:-translate-x-[50%] after:-translate-y-[50%]" %>
 </section>
