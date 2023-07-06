@@ -1,0 +1,8 @@
+<div class="text-red-500 error-text">
+  <% if errors[label].present? %>
+    <% errors.full_messages_for(label).each do |message| %>
+      <span class="d-block"><%= message %>
+      </span>
+    <% end %>
+  <% end %>
+</div>

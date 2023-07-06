@@ -1,0 +1,91 @@
+<section
+  id="login-section"
+  class="
+    flex
+    flex-col
+    items-center
+    justify-center
+    w-full
+    h-screen
+    sm:flex-col
+    md:flex-row
+    lg:flex-row
+  "
+>
+  <div
+    class="
+      left-section
+      mt-auto
+      sm:mt-auto
+      md:mt-0
+      w-[50%]
+      bg-white
+      md:bg-primaryBlue
+      p-4
+      h-screen
+      flex
+      flex-col
+      items-center
+      justify-center
+    "
+  >
+    <figure class="hidden sm:hidden md:block">
+      <%= image_tag "https://res.cloudinary.com/dt8tdf7uu/image/upload/v1688563626/budget_flow/budget-planning_ey26rl.png",
+      width: "100%",
+      alt: "budget-planning" %>
+    </figure>
+    <h2 class="text-4xl tracking-wide">
+      Budget<span class="font-bold text-primaryBlue sm:text-primaryBlue md:text-white">Flow</span>
+    </h2>
+    <p class="mt-4 text-lg tracking-widest text-white">A simple budgeting app</p>
+  </div>
+
+  <div
+    class="
+      action-btns
+      w-full
+      sm:w-full
+      md:w-[50%]
+      px-4
+      flex
+      flex-col
+      gap-y-1
+      mt-auto
+      sm:mt-auto
+      md:mt-0
+    "
+  >
+    <div class="hidden mb-16 sm:hidden md:block">
+      <h3 class="text-4xl text-center">
+        Welcome to Budget<span class="italic font-bold text-primaryBlue">Flow</span>
+      </h3>
+      <hr
+        class="
+          mt-5
+          w-[30%]
+          mx-auto
+          h-px
+          border-t-0
+          bg-transparent
+          bg-gradient-to-r
+          from-transparent
+          via-neutral-500
+          to-transparent
+          opacity-25
+          dark:opacity-100
+        "
+      />
+    </div>
+    <%= link_to "LOG IN",
+    :new_user_session,
+    type: "button",
+    class:
+      "text-center btn btn-primary bg-primaryBlue hover:bg-primaryBlueDeep focus:bg-primaryBlueDeep text-white font-light block w-full sm:w-full md:w-[30%] mx-auto py-4 text-base rounded-md" %>
+
+    <%= link_to "SIGN UP",
+    :new_user_registration,
+    type: "button",
+    class:
+      "text-center btn btn-primary bg-white hover:bg-gray-200 text-primaryGrey font-light block w-full sm:w-full md:w-[30%] mx-auto py-4 text-base rounded-md" %>
+  </div>
+</section>

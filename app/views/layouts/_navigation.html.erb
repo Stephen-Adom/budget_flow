@@ -1,0 +1,273 @@
+<nav
+  class="
+    w-full
+    bg-primaryBlue
+    md:bg-white
+    shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]
+    py-5
+    px-3
+    md:px-5
+    lg:px-10
+    flex
+    items-center
+    justify-between
+  "
+>
+  <%= link_to home_path, class:"hidden text-xl navbar-brand sm:hidden md:block" do %>
+    Budget<span class="font-bold text-primaryBlue">Flow</span>
+  <% end %>
+
+  <button
+    type="button"
+    class="block btn menu-btn sm:block md:hidden"
+    title="menu"
+    data-drawer-target="drawer-navigation"
+    data-drawer-show="drawer-navigation"
+    aria-controls="drawer-navigation"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 stroke stroke-white"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
+    </svg>
+  </button>
+
+  <h5 class="text-white text-[1.2rem] font-light">
+    <%= navbar_title %>
+  </h5>
+
+  <div class="flex items-center gap-3 navbar-nav">
+
+    <% if navbar_title === "DASHBOARD" || navbar_title === "CATEGORY" %>
+      <%= link_to new_category_path, type:"button", class:"btn btn-custom hidden sm:hidden md:flex lg:flex" do %>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 stroke stroke-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+          />
+        </svg>
+
+        <span class="hidden sm:hidden md:block">New Category</span>
+      <% end %>
+    <% else %>
+
+      <%= link_to new_category_expense_path(category_id: params[:category_id]), type:"button", class:"btn btn-custom hidden sm:hidden md:flex lg:flex" do %>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 stroke stroke-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+          />
+        </svg>
+
+        <span class="hidden sm:hidden md:block">New Transasction</span>
+      <% end %>
+
+    <% end %>
+    <!-- Second dropdown container -->
+    <%= image_tag "https://res.cloudinary.com/dt8tdf7uu/image/upload/v1688563625/budget_flow/profile-icon-9_fo1ifn.png",
+    id: "avatarButton",
+    type: "button",
+    data: {
+      dropdown_toggle: "userDropdown",
+      dropdown_placement: "bottom-start"
+    },
+    class: "w-10 h-10 rounded-full cursor-pointer",
+    alt: "User dropdown" %>
+    <!-- Dropdown menu -->
+    <div
+      id="userDropdown"
+      class="
+        z-10
+        hidden
+        bg-white
+        divide-y
+        divide-gray-100
+        rounded-lg
+        shadow
+        w-44
+      "
+    >
+      <div class="px-4 py-3 text-sm text-gray-900">
+        <div>
+          <%= current_user.name %>
+        </div>
+        <div class="font-medium truncate"><%= current_user.email %>
+        </div>
+      </div>
+      <ul class="py-2 text-sm text-gray-700" aria-labelledby="avatarButton">
+        <li>
+
+          <%= link_to "Dashboard", home_path, class: "block px-4 py-2 hover:bg-gray-100" %>
+
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earnings</a>
+        </li>
+      </ul>
+      <div class="flex justify-center py-1">
+        <button
+          data-modal-target="popup-modal"
+          data-modal-toggle="popup-modal"
+          class="
+            block
+            bg-transparent
+            font-medium
+            rounded-lg
+            text-gray-700
+            text-sm
+            px-5
+            py-2.5
+            text-center
+          "
+          type="button"
+        >
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- ========== Confirm Logout Modal Start Section ========== -->
+<div
+  id="popup-modal"
+  tabindex="-1"
+  class="
+    fixed
+    top-0
+    left-0
+    right-0
+    z-50
+    hidden
+    p-4
+    overflow-x-hidden
+    overflow-y-auto
+    md:inset-0
+    h-[calc(100%-1rem)]
+    max-h-full
+  "
+>
+  <div class="relative w-full max-w-md max-h-full">
+    <div class="relative bg-white rounded-lg shadow">
+      <button
+        type="button"
+        class="
+          absolute
+          top-3
+          right-2.5
+          text-gray-400
+          bg-transparent
+          hover:bg-gray-200
+          hover:text-gray-900
+          rounded-lg
+          text-sm
+          w-8
+          h-8
+          ml-auto
+          inline-flex
+          justify-center
+          items-center
+        "
+        data-modal-hide="popup-modal"
+      >
+        <svg
+          class="w-3 h-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6 text-center">
+        <svg
+          class="w-12 h-12 mx-auto mb-4 text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to end your session?</h3>
+
+        <div class="flex items-center justify-center gap-2">
+          <%= button_to "Yes, I'm sure",
+          destroy_user_session_path,
+          method: :delete,
+          data: {
+            modal_hide: "popup-modal"
+          },
+          type: "button",
+          class: "sign_out_btn" %>
+
+          <button
+            data-modal-hide="popup-modal"
+            type="button"
+            class="
+              text-gray-500
+              bg-white
+              hover:bg-gray-100
+              focus:ring-4
+              focus:outline-none
+              focus:ring-gray-200
+              rounded-lg
+              border
+              border-gray-200
+              text-sm
+              font-medium
+              px-5
+              py-2.5
+              hover:text-gray-900
+              focus:z-10
+            "
+          >No, cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ========Confirm Logout Modal End Section ========== -->
+<%= render "layouts/mobile_drawer" %>

@@ -1,0 +1,38 @@
+<section id="categories-new" class="mt-4">
+  <h2 class="mb-10 text-2xl font-semibold text-center">New Category</h2>
+  <div
+    class="
+      grid
+      grid-cols-1
+      new-category-content
+      sm:grid-cols-1
+      md:grid-cols-2
+      lg:grid-cols-2
+    "
+  >
+    <%= image_tag "undraw_folder.svg",
+    width: "100%",
+    class: "mx-auto hidden sm:hidden md:block" %>
+
+    <div
+      class="
+        block
+        max-w-md
+        p-6
+        mx-auto
+        bg-white
+        border
+        border-gray-200
+        rounded-lg
+        shadow
+      "
+    >
+      <%= render "shared/category_form",
+      category: @category,
+      url: categories_path,
+      method: :post,
+      label: "Add Category" %>
+    </div>
+
+  </div>
+</section>
