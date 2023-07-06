@@ -73,8 +73,8 @@ end
 
 gem 'erb-formatter', '~> 0.4.3'
 
-gem 'tailwindcss-rails', '~> 2.0'
-
 gem 'devise', '~> 4.9'
 
 gem 'rubocop', '~> 1.52'
+
+gem "tailwindcss-rails", "~> 2.0"
