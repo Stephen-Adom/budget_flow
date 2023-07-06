@@ -22,7 +22,7 @@
 
 # 📖 [Budget Flow] <a name="about-project"></a>
 
-A simple mobile web application where you can manage your budget: you have a list of expenses associated with a category so that you can see how much money you spent and on what
+A simple mobile web application where you can manage your budget: you have a list of expenses associated with a category so that you can see how much money you spent and on what. Heere is the link to the video presentation[Budgetflow](https://drive.google.com/file/d/1tgzsW6fhRJINqvUQy_wtuyUy1w8A494E/view?usp=sharing)
 
 ## 🛠 Built With <a name="built-with"></a>
 
