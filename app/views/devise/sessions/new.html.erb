@@ -1,4 +1,9 @@
-<section id="login-section" class="w-full h-screen p-3 bg-baseColor md:p-10">
+<%= render "devise/shared/auth_navbar", title: "LOGIN" %>
+
+<section
+  id="login-section"
+  class="relative w-full h-screen p-3 bg-baseColor md:p-10"
+>
   <section class="w-full sm:w-full md:w-[60%] lg:w-[40%] mx-auto">
     <h1
       class="
@@ -34,13 +39,6 @@
                          autocomplete: "current-password" %>
         <%= render "shared/error_message", errors: f.object.errors, label: :password %>
       </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="flex items-center gap-2 mt-3 form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, class: "mb-0 block" %>
-        </div>
-      <% end %>
 
       <div class="mt-4 form-group">
         <%= f.submit "Log in",

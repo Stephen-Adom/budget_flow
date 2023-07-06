@@ -4,5 +4,3 @@ import "controllers";
 import { Dropdown, Ripple, initTE } from "tw-elements";
 
 initTE({ Dropdown, Ripple });
-
-console.log("sdfdf");
