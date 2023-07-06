@@ -102,6 +102,8 @@ This project does not require installation.
 - Clone this [repository](https://github.com/Stephen-Adom/budget_flow.git) in your local machine with correct branch.
 - Run the following commands:-
 - **rails db: migrate**
+- **npm install**
+- **rails tailwindcss:install**
 - **rails s**
 
 ### Run tests
