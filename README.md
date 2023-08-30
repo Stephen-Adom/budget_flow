@@ -103,7 +103,7 @@ This project does not require installation.
 - Run the following commands:-
 - **rails db: migrate**
 - **npm install**
-- **rails tailwindcss:install**
+- **rails tailwindcss: install**
 - **rails s**
 
 ### Run tests
